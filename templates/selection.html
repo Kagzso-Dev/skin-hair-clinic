@@ -1,0 +1,147 @@
+{% extends "base.html" %}
+
+{% block title %}Choose Your Concern | GlowCare{% endblock %}
+
+{% block content %}
+
+<section class="selection-page">
+
+    <div class="selection-container">
+
+        <!-- Consultation Progress -->
+<div class="consultation-progress">
+
+    <div class="progress-step completed">
+        <span>01</span>
+        <p>Basic Details</p>
+    </div>
+
+    <div class="progress-line"></div>
+
+    <div class="progress-step active">
+        <span>02</span>
+        <p>Concern</p>
+    </div>
+
+    <div class="progress-line"></div>
+
+    <div class="progress-step">
+        <span>03</span>
+        <p>Questions</p>
+    </div>
+
+    <div class="progress-line"></div>
+
+    <div class="progress-step">
+        <span>04</span>
+        <p>Appointment</p>
+    </div>
+
+</div>
+
+        <div class="selection-header">
+
+            <span class="section-label">PERSONALIZED CONSULTATION</span>
+
+            <h1>
+                What would you like
+                <span>help with?</span>
+            </h1>
+
+            <p>
+                Choose the area you'd like to discuss so we can
+                personalize your consultation.
+            </p>
+
+        </div>
+
+
+        <form method="POST" action="{{ url_for('selection') }}">
+
+            <div class="selection-grid">
+
+                <!-- SKIN -->
+                <label class="selection-card">
+
+                    <input
+                        type="radio"
+                        name="category"
+                        value="skin"
+                        required
+                    >
+
+                    <div class="selection-card-content">
+
+                        <div class="selection-icon">
+                            ✦
+                        </div>
+
+                        <span class="selection-number">
+                            01
+                        </span>
+
+                        <h2>Skin Care</h2>
+
+                        <p>
+                            Skin concerns, acne, pigmentation,
+                            sensitivity and everyday skin health.
+                        </p>
+
+                        <span class="selection-action">
+                            Select Skin Care →
+                        </span>
+
+                    </div>
+
+                </label>
+
+
+                <!-- HAIR -->
+                <label class="selection-card">
+
+                    <input
+                        type="radio"
+                        name="category"
+                        value="hair"
+                        required
+                    >
+
+                    <div class="selection-card-content">
+
+                        <div class="selection-icon">
+                            ✦
+                        </div>
+
+                        <span class="selection-number">
+                            02
+                        </span>
+
+                        <h2>Hair & Scalp Care</h2>
+
+                        <p>
+                            Hair fall, scalp concerns, dryness,
+                            hair health and related concerns.
+                        </p>
+
+                        <span class="selection-action">
+                            Select Hair Care →
+                        </span>
+
+                    </div>
+
+                </label>
+
+            </div>
+
+
+            <button type="submit" class="selection-button">
+                Continue →
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+{% endblock %}

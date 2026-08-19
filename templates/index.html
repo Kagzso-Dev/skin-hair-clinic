@@ -1,0 +1,666 @@
+{% extends "base.html" %}
+
+{% block title %}
+Home | GlowCare Skin & Hair Clinic
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =====================================================
+     HERO SECTION
+====================================================== -->
+
+<section class="hero">
+
+    <div class="container hero-container">
+
+        <!-- Hero Content -->
+
+        <div class="hero-content">
+
+            <span class="hero-label">
+                SKIN & HAIR CARE
+            </span>
+
+            <h1>
+                Personalized care for
+                <span>confident skin & hair.</span>
+            </h1>
+
+            <p>
+                Begin your journey with a personalized
+                consultation focused on understanding
+                your skin and hair concerns.
+            </p>
+
+            <div class="hero-actions">
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="btn btn-primary"
+                >
+                    Book a Consultation
+                    <span>→</span>
+                </a>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="btn btn-secondary"
+                >
+                    Explore Services
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hero Visual -->
+
+        <div class="hero-visual">
+
+            <div class="hero-image-wrapper">
+
+                <div class="hero-image-placeholder">
+                    <span>✦</span>
+
+                    <p>
+                        Personalized<br>
+                        Skin & Hair Care
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- Floating Information Card -->
+
+            <div class="hero-info-card">
+
+                <span class="hero-info-icon">
+                    ✓
+                </span>
+
+                <div>
+                    <strong>
+                        Personalized Consultation
+                    </strong>
+
+                    <small>
+                        Care that begins with understanding
+                    </small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     ABOUT PREVIEW
+====================================================== -->
+
+<section class="section about-preview">
+
+    <div class="container">
+
+        <div class="about-preview-grid">
+
+            <!-- About Visual -->
+
+            <div class="about-preview-visual">
+
+                <div class="about-visual-card">
+
+                    <span class="about-visual-icon">
+                        ✦
+                    </span>
+
+                    <h3>
+                        Care that begins
+                        with understanding.
+                    </h3>
+
+                    <p>
+                        Personalized attention for
+                        your skin and hair concerns.
+                    </p>
+
+                </div>
+
+                <div class="about-small-card">
+
+                    <span>✓</span>
+
+                    <div>
+                        <strong>
+                            Patient Focused
+                        </strong>
+
+                        <small>
+                            Your concerns come first.
+                        </small>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- About Content -->
+
+            <div class="about-preview-content">
+
+                <span class="section-label">
+                    ABOUT OUR CLINIC
+                </span>
+
+                <h2>
+                    Personalized care,
+                    designed around you.
+                </h2>
+
+                <p>
+                    We provide personalized skin and hair
+                    care consultations focused on
+                    understanding each individual's
+                    concerns.
+                </p>
+
+                <p>
+                    Our approach combines professional
+                    expertise with personalized treatment
+                    recommendations.
+                </p>
+
+
+                <!-- Highlights -->
+
+                <div class="about-highlights">
+
+                    <div class="about-highlight">
+
+                        <span class="highlight-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Personalized Consultation
+                            </strong>
+
+                            <p>
+                                Care tailored to your
+                                individual concerns.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-highlight">
+
+                        <span class="highlight-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Expert Care
+                            </strong>
+
+                            <p>
+                                A thoughtful approach to
+                                skin and hair health.
+                            </p>
+                        </div>
+
+                    </div>
+
+
+                    <div class="about-highlight">
+
+                        <span class="highlight-icon">
+                            ✓
+                        </span>
+
+                        <div>
+                            <strong>
+                                Patient Focused
+                            </strong>
+
+                            <p>
+                                Your comfort and concerns
+                                remain our priority.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="{{ url_for('about') }}"
+                    class="btn btn-primary"
+                >
+                    Learn More About Us
+                    <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     SPECIALIZATIONS
+====================================================== -->
+
+<section class="section specializations">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="section-heading specializations-heading">
+
+            <span class="section-label">
+                OUR SPECIALIZATIONS
+            </span>
+
+            <h2>
+                Focused care for your
+                skin & hair.
+            </h2>
+
+            <p>
+                Explore our areas of care designed to
+                help you better understand and manage
+                your skin and hair concerns.
+            </p>
+
+        </div>
+
+
+        <!-- Specialization Cards -->
+
+        <div class="specializations-grid">
+
+            <!-- Skin Care -->
+
+            <article class="specialization-card">
+
+                <div class="specialization-icon">
+                    ✦
+                </div>
+
+                <span class="specialization-number">
+                    01
+                </span>
+
+                <h3>
+                    Skin Care
+                </h3>
+
+                <p>
+                    Personalized attention for common
+                    skin concerns and overall skin care.
+                </p>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="specialization-link"
+                >
+                    Explore Care
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- Hair Care -->
+
+            <article class="specialization-card">
+
+                <div class="specialization-icon">
+                    ✦
+                </div>
+
+                <span class="specialization-number">
+                    02
+                </span>
+
+                <h3>
+                    Hair Care
+                </h3>
+
+                <p>
+                    Personalized guidance for hair
+                    concerns and healthier-looking hair.
+                </p>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="specialization-link"
+                >
+                    Explore Care
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- Skin Health -->
+
+            <article class="specialization-card">
+
+                <div class="specialization-icon">
+                    ✦
+                </div>
+
+                <span class="specialization-number">
+                    03
+                </span>
+
+                <h3>
+                    Skin Health
+                </h3>
+
+                <p>
+                    Focused care to understand your
+                    skin and support its overall health.
+                </p>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="specialization-link"
+                >
+                    Explore Care
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- Scalp Care -->
+
+            <article class="specialization-card">
+
+                <div class="specialization-icon">
+                    ✦
+                </div>
+
+                <span class="specialization-number">
+                    04
+                </span>
+
+                <h3>
+                    Scalp Care
+                </h3>
+
+                <p>
+                    Personalized attention for scalp
+                    concerns and everyday scalp health.
+                </p>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="specialization-link"
+                >
+                    Explore Care
+                    <span>→</span>
+                </a>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     FEATURED SERVICES
+====================================================== -->
+
+<section class="section featured-services">
+
+    <div class="container">
+
+        <!-- Section Heading -->
+
+        <div class="services-heading-row">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    WHAT WE DO
+                </span>
+
+                <h2>
+                    Care designed around
+                    your concerns.
+                </h2>
+
+                <p>
+                    Start with a personalized consultation
+                    and explore care options based on your
+                    individual skin or hair concerns.
+                </p>
+
+            </div>
+
+            <a
+                href="{{ url_for('services') }}"
+                class="services-view-link"
+            >
+                View All Services
+                <span>→</span>
+            </a>
+
+        </div>
+
+
+        <!-- Service Cards -->
+
+        <div class="services-grid">
+
+            <!-- Service 1 -->
+
+            <article class="service-card">
+
+                <div class="service-card-top">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+                    <span class="service-number">
+                        01
+                    </span>
+
+                </div>
+
+                <h3>
+                    Skin Consultation
+                </h3>
+
+                <p>
+                    Understand your skin concerns through
+                    a personalized consultation focused on
+                    your individual needs.
+                </p>
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="service-link"
+                >
+                    Start Consultation
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- Service 2 -->
+
+            <article class="service-card service-card-featured">
+
+                <div class="service-card-top">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+                    <span class="service-number">
+                        02
+                    </span>
+
+                </div>
+
+                <h3>
+                    Hair & Scalp Consultation
+                </h3>
+
+                <p>
+                    Explore your hair and scalp concerns
+                    with a personalized assessment designed
+                    around your needs.
+                </p>
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="service-link"
+                >
+                    Start Consultation
+                    <span>→</span>
+                </a>
+
+            </article>
+
+
+            <!-- Service 3 -->
+
+            <article class="service-card">
+
+                <div class="service-card-top">
+
+                    <div class="service-icon">
+                        ✦
+                    </div>
+
+                    <span class="service-number">
+                        03
+                    </span>
+
+                </div>
+
+                <h3>
+                    Personalized Care Plan
+                </h3>
+
+                <p>
+                    Get personalized recommendations based
+                    on the concerns you share during your
+                    consultation.
+                </p>
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="service-link"
+                >
+                    Book Consultation
+                    <span>→</span>
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <!-- Bottom CTA -->
+
+
+            <a
+                href="{{ url_for('consultation') }}"
+                class="btn btn-primary"
+            >
+                Book a Consultation
+                <span>→</span>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONSULTATION CTA
+====================================================== -->
+
+<section class="section consultation-cta">
+
+    <div class="container">
+
+        <div class="consultation-cta-box">
+
+            <!-- CTA Content -->
+
+            <div class="consultation-cta-content">
+
+                <span class="section-label">
+                    READY TO GET STARTED?
+                </span>
+
+                <h2>
+                    Your care journey starts
+                    with a conversation.
+                </h2>
+
+                <p>
+                    Begin with a personalized consultation
+                    focused on understanding your skin and
+                    hair concerns.
+                </p>
+
+            </div>
+
+
+            <!-- CTA Action -->
+
+            <div class="consultation-cta-action">
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="btn btn-light"
+                >
+                    Book a Consultation
+                    <span>→</span>
+                </a>
+
+                <small>
+                    Take the first step toward
+                    personalized care.
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+

@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+
+{% block title %}
+Consultation Details | GlowCare
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-page">
+
+    <div class="container">
+
+        <!-- Heading -->
+
+        <div class="admin-heading">
+
+            <span class="section-label">
+                CONSULTATION DETAILS
+            </span>
+
+            <h1>
+                {{ consultation.full_name }}
+            </h1>
+
+            <p>
+                Complete consultation information and questionnaire responses.
+            </p>
+
+        </div>
+
+
+        <!-- Patient Details -->
+
+        <div class="admin-detail-card">
+
+            <h2>Patient Details</h2>
+
+            <div class="detail-grid">
+
+                <div>
+                    <span>Name</span>
+                    <strong>
+                        {{ consultation.full_name }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Email</span>
+                    <strong>
+                        {{ consultation.email }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Phone</span>
+                    <strong>
+                        {{ consultation.phone }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Concern</span>
+                    <strong>
+                        {{ consultation.concern }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Message</span>
+                    <strong>
+                        {{ consultation.message or "No message provided." }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Appointment -->
+
+        <div class="admin-detail-card">
+
+            <h2>Appointment</h2>
+
+            <div class="detail-grid">
+
+                <div>
+                    <span>Date</span>
+                    <strong>
+                        {{ consultation.appointment_date }}
+                    </strong>
+                </div>
+
+                <div>
+                    <span>Time</span>
+                    <strong>
+                        {{ consultation.appointment_time }}
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Questionnaire -->
+
+        <div class="admin-detail-card">
+
+            <h2>Questionnaire Responses</h2>
+
+            {% if answers %}
+
+                <div class="questionnaire-results">
+
+                    {% for item in answers %}
+
+                    <div class="admin-question">
+
+                        <div class="admin-question-number">
+                            {{ "%02d"|format(loop.index) }}
+                        </div>
+
+                        <div class="admin-question-content">
+
+                            <p class="admin-question-text">
+                                {{ item.question_text }}
+                            </p>
+
+                            <p class="admin-answer">
+                                {{ item.answer }}
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    {% endfor %}
+
+                </div>
+
+            {% else %}
+
+                <p>
+                    No questionnaire responses found.
+                </p>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- Back -->
+
+        <a
+            href="{{ url_for('admin') }}"
+            class="btn btn-primary"
+        >
+            ← Back to Dashboard
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}
+Book Appointment | GlowCare
+{% endblock %}
+
+{% block content %}
+
+<section class="consultation-page">
+
+    <div class="container consultation-container">
+
+        <!-- Progress -->
+
+        <div class="consultation-progress">
+
+            <div class="progress-step completed">
+                <span>✓</span>
+                <p>Basic Details</p>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step completed">
+                <span>✓</span>
+                <p>Concern</p>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step completed">
+                <span>✓</span>
+                <p>Questions</p>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step active">
+                <span>04</span>
+                <p>Appointment</p>
+            </div>
+
+        </div>
+
+
+        <!-- Appointment Card -->
+
+        <div class="consultation-card appointment-card">
+
+            <div class="consultation-heading">
+
+                <span class="section-label">
+                    STEP 04
+                </span>
+
+                <h1>
+                    Choose your appointment.
+                </h1>
+
+                <p>
+                    Select a convenient date and time for your consultation.
+                </p>
+
+            </div>
+
+
+            <!-- Appointment Form -->
+
+            <form
+                method="POST"
+                action="{{ url_for('appointment') }}"
+                class="appointment-form"
+            >
+
+                <!-- Date -->
+
+                <div class="form-group">
+
+                    <label for="appointment_date">
+                        Preferred Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="appointment_date"
+                        name="appointment_date"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- Time -->
+
+                <div class="form-group">
+
+                    <label for="appointment_time">
+                        Preferred Time
+                    </label>
+
+                    <select
+                        id="appointment_time"
+                        name="appointment_time"
+                        required
+                    >
+
+                        <option value="">
+                            Select a time
+                        </option>
+
+                        <option value="10:00 AM">
+                            10:00 AM
+                        </option>
+
+                        <option value="11:00 AM">
+                            11:00 AM
+                        </option>
+
+                        <option value="12:00 PM">
+                            12:00 PM
+                        </option>
+
+                        <option value="2:00 PM">
+                            2:00 PM
+                        </option>
+
+                        <option value="3:00 PM">
+                            3:00 PM
+                        </option>
+
+                        <option value="4:00 PM">
+                            4:00 PM
+                        </option>
+
+                        <option value="5:00 PM">
+                            5:00 PM
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- Button -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary consultation-next-btn"
+                >
+                    Confirm Appointment →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

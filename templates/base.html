@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Responsive viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Page Title -->
+    <title>{% block title %}GlowCare Skin & Hair Clinic{% endblock %}</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- Main CSS -->
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+    <!-- ==============================
+         NAVBAR
+    =============================== -->
+
+    {% block navbar %}
+
+    <nav class="navbar">
+
+        <div class="container navbar-container">
+
+            <!-- Logo / Clinic Name -->
+            <a href="{{ url_for('home') }}" class="brand">
+
+                <span class="brand-icon">
+                    ✦
+                </span>
+
+                <span class="brand-text">
+
+                    <span class="brand-name">
+                        GlowCare
+                    </span>
+
+                    <span class="brand-subtitle">
+                        Skin & Hair Clinic
+                    </span>
+
+                </span>
+
+            </a>
+
+
+            <!-- ==========================================
+                 DESKTOP NAVIGATION
+                 Hide on Admin pages
+            =========================================== -->
+
+            {% if request.endpoint not in ['admin', 'consultation_details'] %}
+
+            <div class="nav-links">
+
+                <a
+                    href="{{ url_for('home') }}"
+                    class="{% if request.endpoint == 'home' %}active{% endif %}"
+                >
+                    Home
+                </a>
+
+                <a
+                    href="{{ url_for('about') }}"
+                    class="{% if request.endpoint == 'about' %}active{% endif %}"
+                >
+                    About
+                </a>
+
+                <a
+                    href="{{ url_for('services') }}"
+                    class="{% if request.endpoint == 'services' %}active{% endif %}"
+                >
+                    Services
+                </a>
+
+                <a
+                    href="{{ url_for('blog') }}"
+                    class="{% if request.endpoint == 'blog' %}active{% endif %}"
+                >
+                    Blog
+                </a>
+
+                <a
+                    href="{{ url_for('consultation') }}"
+                    class="nav-consultation"
+                >
+                    Book Consultation
+                </a>
+
+            </div>
+
+
+            <!-- Mobile Menu Button -->
+
+            <button
+                class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                type="button"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+            {% endif %}
+
+        </div>
+
+
+        <!-- ==========================================
+             MOBILE NAVIGATION
+             Hide on Admin pages
+        =========================================== -->
+
+        {% if request.endpoint not in ['admin', 'consultation_details'] %}
+
+        <div
+            class="mobile-nav"
+            id="mobileNav"
+        >
+
+            <a href="{{ url_for('home') }}">
+                Home
+            </a>
+
+            <a href="{{ url_for('about') }}">
+                About
+            </a>
+
+            <a href="{{ url_for('services') }}">
+                Services
+            </a>
+
+            <a href="{{ url_for('blog') }}">
+                Blog
+            </a>
+
+            <a
+                href="{{ url_for('consultation') }}"
+                class="mobile-consultation"
+            >
+                Book Consultation
+            </a>
+
+        </div>
+
+        {% endif %}
+
+    </nav>
+
+    {% endblock %}
+
+
+    <!-- ==============================
+         MAIN PAGE CONTENT
+    =============================== -->
+
+    <main>
+
+        {% block content %}
+        {% endblock %}
+
+    </main>
+
+
+    <!-- ==============================
+         FOOTER
+    =============================== -->
+
+    {% block footer %}
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="footer-grid">
+
+                <!-- Clinic Information -->
+
+                <div class="footer-brand">
+
+                    <a
+                        href="{{ url_for('home') }}"
+                        class="footer-logo"
+                    >
+
+                        <span class="brand-icon">
+                            ✦
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                GlowCare
+                            </strong>
+
+                            <small>
+                                Skin & Hair Clinic
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <p class="footer-description">
+
+                        Personalized skin and hair care focused on
+                        understanding your concerns and helping you
+                        feel confident in your skin.
+
+                    </p>
+
+                </div>
+
+
+                <!-- Quick Links -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Quick Links
+                    </h3>
+
+                    <a href="{{ url_for('home') }}">
+                        Home
+                    </a>
+
+                    <a href="{{ url_for('about') }}">
+                        About
+                    </a>
+
+                    <a href="{{ url_for('services') }}">
+                        Services
+                    </a>
+
+                    <a href="{{ url_for('blog') }}">
+                        Blog
+                    </a>
+
+                </div>
+
+
+                <!-- Services -->
+
+                <div class="footer-column">
+
+                    <h3>
+                        Our Services
+                    </h3>
+
+                    <a href="{{ url_for('services') }}">
+                        Skin Care
+                    </a>
+
+                    <a href="{{ url_for('services') }}">
+                        Hair Care
+                    </a>
+
+                    <a href="{{ url_for('services') }}">
+                        Skin Health
+                    </a>
+
+                    <a href="{{ url_for('services') }}">
+                        Scalp Care
+                    </a>
+
+                </div>
+
+
+                <!-- Contact -->
+
+                <div class="footer-column footer-contact">
+
+                    <h3>
+                        Contact Us
+                    </h3>
+
+                    <p>
+
+                        <span class="contact-icon">
+                            📍
+                        </span>
+
+                        <span>
+                            Chennai, Tamil Nadu, India
+                        </span>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="contact-icon">
+                            📞
+                        </span>
+
+                        <a href="tel:+919876543210">
+                            +91 98765 43210
+                        </a>
+
+                    </p>
+
+
+                    <p>
+
+                        <span class="contact-icon">
+                            ✉
+                        </span>
+
+                        <a href="mailto:care@glowcare.com">
+                            care@glowcare.com
+                        </a>
+
+                    </p>
+
+
+                    <a
+                        href="https://wa.me/919876543210"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="footer-whatsapp"
+                    >
+                        💬 WhatsApp Us
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- Bottom Footer -->
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 GlowCare Skin & Hair Clinic.
+                    All rights reserved.
+                </p>
+
+                <p>
+                    Personalized Care. Confident You.
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    {% endblock %}
+
+
+    <!-- Main JavaScript -->
+
+    <script
+        src="{{ url_for('static', filename='javascript/script.js') }}"
+    ></script>
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

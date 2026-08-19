@@ -1,0 +1,134 @@
+{% extends "base.html" %}
+
+{% block title %}
+Questionnaire | GlowCare
+{% endblock %}
+
+{% block content %}
+
+<section class="consultation-page">
+
+    <div class="container consultation-container">
+
+        <!-- Progress -->
+
+        <div class="consultation-progress">
+
+            <div class="progress-step completed">
+                <span>✓</span>
+                <p>Basic Details</p>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step completed">
+                <span>✓</span>
+                <p>Concern</p>
+            </div>
+
+            <div class="progress-line active"></div>
+
+            <div class="progress-step active">
+                <span>03</span>
+                <p>Questions</p>
+            </div>
+
+            <div class="progress-line"></div>
+
+            <div class="progress-step">
+                <span>04</span>
+                <p>Appointment</p>
+            </div>
+
+        </div>
+
+
+        <!-- Questionnaire Card -->
+
+        <div class="consultation-card questionnaire-card">
+
+            <div class="consultation-heading">
+
+                <span class="section-label">
+                    STEP 03
+                </span>
+
+                <h1>
+                    Tell us a little more.
+                </h1>
+
+                <p>
+                    Answer the following questions about
+                    your {{ concern }} concerns.
+                </p>
+
+            </div>
+
+
+            <!-- Questions -->
+
+            <form
+                method="POST"
+                action="{{ url_for('questionnaire') }}"
+                class="questionnaire-form"
+            >
+
+                {% for question in questions %}
+
+                <div class="question-group">
+
+                    <label class="question-title">
+
+                        <span class="question-number">
+                            {{ "%02d"|format(loop.index) }}
+                        </span>
+
+                        {{ question.question_text }}
+
+                    </label>
+
+
+                    <!-- Multiple Choice Options -->
+
+                   <div class="question-options">
+
+    {% for option in question.options %}
+
+    <label class="answer-option">
+
+        <input
+            type="radio"
+            name="question_{{ question.id }}"
+            value="{{ option.option_text }}"
+            required
+        >
+
+        <span>{{ option.option_text }}</span>
+
+    </label>
+
+    {% endfor %}
+
+</div>
+
+                {% endfor %}
+
+
+                <!-- Continue Button -->
+
+                <button
+                    type="submit"
+                    class="btn btn-primary consultation-next-btn"
+                >
+                    Continue to Appointment →
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

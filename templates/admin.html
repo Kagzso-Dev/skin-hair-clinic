@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block title %}
+Admin Dashboard | GlowCare
+{% endblock %}
+
+{% block content %}
+
+<section class="admin-page">
+
+    <div class="container">
+
+        <div class="admin-heading">
+
+            <span class="section-label">
+                GLOWCARE ADMIN
+            </span>
+
+            <h1>
+                Consultation Dashboard
+            </h1>
+
+            <p>
+                View all consultation requests and appointment details.
+            </p>
+
+        </div>
+
+
+        <div class="admin-table-container">
+
+            <table class="admin-table">
+
+                <thead>
+
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Message</th>
+                        <th>Concern</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Details</th>
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    {% for consultation in consultations %}
+
+                    <tr>
+
+    <td>
+        {{ consultation.id }}
+    </td>
+
+    <td>
+        {{ consultation.full_name }}
+    </td>
+
+    <td>
+        {{ consultation.email }}
+    </td>
+
+    <td>
+        {{ consultation.phone }}
+    </td>
+
+    <td>
+        {{ consultation.message }}
+    </td>
+    
+    <td>
+        {{ consultation.concern }}
+    </td>
+
+    <td>
+        {{ consultation.appointment_date }}
+    </td>
+
+    <td>
+        {{ consultation.appointment_time }}
+    </td>
+
+    <td>
+
+        <a
+            href="{{ url_for('consultation_details', consultation_id=consultation.id) }}"
+            class="admin-view-btn"
+        >
+            View Details →
+        </a>
+
+    </td>
+
+</tr>
+
+                    {% endfor %}
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% block title %}
+Consultation Confirmed | GlowCare
+{% endblock %}
+
+{% block content %}
+
+<section class="success-page">
+
+    <div class="success-container">
+
+        <div class="success-card">
+
+            <!-- Success Icon -->
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+
+            <span class="section-label">
+                CONSULTATION CONFIRMED
+            </span>
+
+
+            <h1>
+                You're all set.
+            </h1>
+
+
+            <p class="success-message">
+
+                Thank you for choosing GlowCare.
+                Your consultation request has been
+                successfully received.
+
+            </p>
+
+
+            <!-- Appointment Summary -->
+
+            <div class="appointment-summary">
+
+                <div class="summary-item">
+
+                    <span>
+                        Date
+                    </span>
+
+                    <strong>
+                        {{ appointment_date }}
+                    </strong>
+
+                </div>
+
+
+                <div class="summary-divider"></div>
+
+
+                <div class="summary-item">
+
+                    <span>
+                        Time
+                    </span>
+
+                    <strong>
+                        {{ appointment_time }}
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <p class="success-note">
+
+                Our team will contact you using the
+                details you provided to confirm your
+                consultation.
+
+            </p>
+
+
+            <a
+                href="{{ url_for('home') }}"
+                class="success-home-btn"
+            >
+                Back to Home
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
